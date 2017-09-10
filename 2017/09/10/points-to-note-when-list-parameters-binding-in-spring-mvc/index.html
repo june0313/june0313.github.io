@@ -3,24 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>IntelliJ CE에서 스프링 부트 디버깅 하기 | Steady Programmer</title>
+    <title>스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점 | Steady Programmer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="spring,spring boot,intellij,debugging" />
+        <meta name="keywords" content="spring,spring mvc" />
     
-    <meta name="description" content="내가 프로그래밍을 할때 주로 사용하는 IDE는 IntelliJ이다. 회사에서는 라이센스를 구매해 주기 때문에 Ultimate 버전을 사용하고, 집에서 간단한 예제 코드등을 실행할때는 무료버전인 Community Edition을 사용한다. 지금 공부하고 있는 책의 예제 코드가 메이븐 + 스프링부트 프로젝트여서 코드를 돌려보기 위해 IntelliJ Commun">
-<meta name="keywords" content="spring,spring boot,intellij,debugging">
+    <meta name="description" content="스프링 MVC의 컨트롤러에는 콤마(,)로 구분된 파라미터를 리스트로 바인딩 해주는 편리한 기능이 있다. ID 목록 등을 요청으로 받을 때 자주 사용하는 기능이다. @PathViriable 과 @RequestParam 모두 사용할 수 있으며, 사용법은 아래와 같이 간단한다. 바인딩 될 파라미터 변수를 List로 선언해주면 된다. 12345@GetMapping">
+<meta name="keywords" content="spring,spring mvc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IntelliJ CE에서 스프링 부트 디버깅 하기">
-<meta property="og:url" content="http://june0313.github.io/2017/06/25/debugging-springboot-in-intellij-ce/index.html">
+<meta property="og:title" content="스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점">
+<meta property="og:url" content="http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/index.html">
 <meta property="og:site_name" content="Steady Programmer">
-<meta property="og:description" content="내가 프로그래밍을 할때 주로 사용하는 IDE는 IntelliJ이다. 회사에서는 라이센스를 구매해 주기 때문에 Ultimate 버전을 사용하고, 집에서 간단한 예제 코드등을 실행할때는 무료버전인 Community Edition을 사용한다. 지금 공부하고 있는 책의 예제 코드가 메이븐 + 스프링부트 프로젝트여서 코드를 돌려보기 위해 IntelliJ Commun">
-<meta property="og:image" content="http://june0313.github.io/2017/06/25/debugging-springboot-in-intellij-ce/bp.png">
-<meta property="og:updated_time" content="2017-06-25T14:32:30.000Z">
+<meta property="og:description" content="스프링 MVC의 컨트롤러에는 콤마(,)로 구분된 파라미터를 리스트로 바인딩 해주는 편리한 기능이 있다. ID 목록 등을 요청으로 받을 때 자주 사용하는 기능이다. @PathViriable 과 @RequestParam 모두 사용할 수 있으며, 사용법은 아래와 같이 간단한다. 바인딩 될 파라미터 변수를 List로 선언해주면 된다. 12345@GetMapping">
+<meta property="og:image" content="http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result1.png">
+<meta property="og:updated_time" content="2017-09-10T09:45:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IntelliJ CE에서 스프링 부트 디버깅 하기">
-<meta name="twitter:description" content="내가 프로그래밍을 할때 주로 사용하는 IDE는 IntelliJ이다. 회사에서는 라이센스를 구매해 주기 때문에 Ultimate 버전을 사용하고, 집에서 간단한 예제 코드등을 실행할때는 무료버전인 Community Edition을 사용한다. 지금 공부하고 있는 책의 예제 코드가 메이븐 + 스프링부트 프로젝트여서 코드를 돌려보기 위해 IntelliJ Commun">
-<meta name="twitter:image" content="http://june0313.github.io/2017/06/25/debugging-springboot-in-intellij-ce/bp.png">
+<meta name="twitter:title" content="스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점">
+<meta name="twitter:description" content="스프링 MVC의 컨트롤러에는 콤마(,)로 구분된 파라미터를 리스트로 바인딩 해주는 편리한 기능이 있다. ID 목록 등을 요청으로 받을 때 자주 사용하는 기능이다. @PathViriable 과 @RequestParam 모두 사용할 수 있으며, 사용법은 아래와 같이 간단한다. 바인딩 될 파라미터 변수를 List로 선언해주면 된다. 12345@GetMapping">
+<meta name="twitter:image" content="http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result1.png">
     
 
     
@@ -130,14 +130,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-debugging-springboot-in-intellij-ce" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-points-to-note-when-list-parameters-binding-in-spring-mvc" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        IntelliJ CE에서 스프링 부트 디버깅 하기
+        스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점
         </h1>
     
 
@@ -147,34 +147,36 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/06/25/debugging-springboot-in-intellij-ce/" class="article-date">
-            <time datetime="2017-06-25T12:34:30.000Z" itemprop="datePublished">2017-06-25</time>
+        <a href="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/" class="article-date">
+            <time datetime="2017-09-10T08:36:15.000Z" itemprop="datePublished">2017-09-10</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/debugging/">debugging</a>, <a class="tag-link" href="/tags/intellij/">intellij</a>, <a class="tag-link" href="/tags/spring/">spring</a>, <a class="tag-link" href="/tags/spring-boot/">spring boot</a>
+        <a class="tag-link" href="/tags/spring/">spring</a>, <a class="tag-link" href="/tags/spring-mvc/">spring mvc</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>내가 프로그래밍을 할때 주로 사용하는 IDE는 IntelliJ이다. 회사에서는 라이센스를 구매해 주기 때문에 Ultimate 버전을 사용하고, 집에서 간단한 예제 코드등을 실행할때는 무료버전인 Community Edition을 사용한다.</p>
-<p>지금 공부하고 있는 책의 예제 코드가 메이븐 + 스프링부트 프로젝트여서 코드를 돌려보기 위해 IntelliJ Community Edition 에 import하고 디버깅을 하기 위해 braekpoint를 걸었으나 걸리지 않는 문제가 발생했다.</p>
-<img src="/2017/06/25/debugging-springboot-in-intellij-ce/bp.png" alt="breakpoint가 걸리지 않는다.." title="breakpoint가 걸리지 않는다..">
-<p>이상하다 싶어 Ultimate 버전에 import 하고 똑같이 braekpoint를 걸어 디버깅을 시도 해봤는데 아무 이상 없이 디버깅이 잘 되었다. 뭐가 다른걸까 하고 봤는데 스프링 부트를 실행시키는 방법에 차이점이 있었다.</p>
-<p>Ultimate 버전은 공식적으로 Spring boot 통합 환경을 지원해준다. 그래서 IntelliJ가 지원하는 Spring boot Run Configuration 기능을 이용해 애플리케이션을 실행시켰고, CE버전은 Spring boot 환경을 지원하지 않기 때문에 maven 명령어인 <code>spring-boot:run</code>으로 실행하였다. Ultimate 버전에서도 maven 명령어로 스프링 부트를 실행하면 디버깅을 할 수 없는 문제가 똑같이 발생했다. </p>
-<img src="/2017/06/25/debugging-springboot-in-intellij-ce/springboot-run-config.png" alt="IntelliJ Ultimate가 지원하는 Spring boot run configuration" title="IntelliJ Ultimate가 지원하는 Spring boot run configuration">
-<img src="/2017/06/25/debugging-springboot-in-intellij-ce/maven-run-config.png" alt="maven run configuration" title="maven run configuration">
-<p>원인은 아직 잘 모르겠으나 Spring boot가 내장 톰켓을 사용하기 때문인것 같았다. 디버깅 할 수 있는 방법이 없을까 하다가 원격 디버깅 기능을 이용해 문제를 해결하였다.</p>
-<p>먼저 원격 디버깅 세션을 활성화 하기 위해 아래와 같이 VM Option을 추가해준다.<br><code>-Drun.jvmArguments=&quot;-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005&quot;</code><br><img src="/2017/06/25/debugging-springboot-in-intellij-ce/vm-option.png" alt="VM Option 설정 화면" title="VM Option 설정 화면"></p>
-<p>그런 다음, <code>Edit configuration -&gt; + 버튼 클릭 -&gt; Remote Debug Configuration</code>을 만들어 준다.</p>
-<img src="/2017/06/25/debugging-springboot-in-intellij-ce/remote.png" alt="remote debug configuration. 기본값을 그대로 사용했다." title="remote debug configuration. 기본값을 그대로 사용했다.">
-<p>마지막으로 디버깅을 하기 위해선 먼저 만든 maven run configuration 으로 애플리케이션을 실행한 다음, 두번째로 만든 remote debug configuration을 실행하면 된다. (물론 debug 모드로 실행해야 한다.)</p>
-<p>번거롭긴 하지만 위 방법을 이용하면 IntelliJ CE에서도 Spring boot 지원 없이 디버깅을 할 수 있다. </p>
+            <p>스프링 MVC의 컨트롤러에는 콤마(,)로 구분된 파라미터를 리스트로 바인딩 해주는 편리한 기능이 있다. ID 목록 등을 요청으로 받을 때 자주 사용하는 기능이다.</p>
+<p><code>@PathViriable</code> 과 <code>@RequestParam</code> 모두 사용할 수 있으며, 사용법은 아래와 같이 간단한다. 바인딩 될 파라미터 변수를 List로 선언해주면 된다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GetMapping</span>(<span class="string">"/items/&#123;ids&#125;"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> List&lt;Long&gt; <span class="title">getItems</span><span class="params">(@PathVariable List&lt;Long&gt; ids)</span> </span>&#123;</div><div class="line">    System.out.println(ids);</div><div class="line">    <span class="keyword">return</span> ids;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>클라이언트에서는 아래와 같이 콤마로 구분된 파라미터로 요청할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:8080/items/1,2,3</div></pre></td></tr></table></figure></p>
+<p>결과 화면<br><img src="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result1.png" alt="결과 화면" title="결과 화면"></p>
+<p>그런데 클라이언트에서 아래와 같이 호출했을때는 어떻게 바인딩이 될까?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:8080/items/1,,3,4</div></pre></td></tr></table></figure></p>
+<p>내가 예상한 결과는 아래와 같았다.</p>
+<img src="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result2.png" alt="내가 예상한 결과" title="내가 예상한 결과">
+<p>즉, 1번 아이디 뒤에는 값이 비어있으므로 비어있는 부분은 바인딩 되지 않고 존재하는 값인 1, 3, 4 번만 바인딩이 될것이라 생각했다. 그러나 실제 결과는 아래와 같았다. </p>
+<img src="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result3.png" alt="실제 결과" title="실제 결과">
+<p>비어있는 값은 <code>null</code> 로 바인딩이 되었다. 물론 클라이언트 측에서 제대로된 값으로 요청을 하면 좋겠지만 저런식으로 요청이 들어오게 되면 서버에서는 <strong>NPE(Null Pointer Exception)</strong>가 발생할 수 있다. (실제 운영중인 서버에서 같은 이유로 NPE가 난 적이 있다.) </p>
+<p>아래는 NPE가 발생하는 코드의 예이다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GetMapping</span>(<span class="string">"/items/&#123;ids&#125;"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> List&lt;Long&gt; <span class="title">getItems</span><span class="params">(@PathVariable List&lt;Long&gt; ids)</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span> (Long id : ids) &#123;</div><div class="line">        System.out.println(id.toString());</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ids;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>실제 ids 값을 디버깅해 보면 다음처럼 보인다.<br><img src="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/debug_result.png" alt="ids 값 디버깅" title="ids 값 디버깅"><br>리스트 요소에 null이 포함되어 있어도 실제 사이즈가 4이고 루프도 4번 돌기 때문에 두번째 id를 출력하는 과정에서 <strong>NPE</strong>가 발생하게된다.</p>
+<p>이처럼 리스트 파라미터를 바인딩 할때는 <strong>중간 값으로 null이 들어올 수 있음을 주의</strong>해야하고 적절한 null 처리가 필요하다. 혹은 파라미터를 사용하기 전에 <strong>null요소를 미리 제거하고 사용</strong>하는 방법도 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GetMapping</span>(<span class="string">"/items/&#123;ids&#125;"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> List&lt;Long&gt; <span class="title">getItems</span><span class="params">(@PathVariable List&lt;Long&gt; ids)</span> </span>&#123;</div><div class="line">    <span class="keyword">final</span> List&lt;Long&gt; nullRemovedIds = ids.stream()</div><div class="line">        .filter(Objects::nonNull)</div><div class="line">        .collect(Collectors.toList());</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (Long id : nullRemovedIds) &#123;</div><div class="line">        System.out.println(id.toString());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> nullRemovedIds;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -182,7 +184,7 @@
 
 
 
-    <a data-url="http://june0313.github.io/2017/06/25/debugging-springboot-in-intellij-ce/" data-id="cj7ehayz70000copbbhtjz8uy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/" data-id="cj7ehjbf7000acopbyc50f5r6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -295,16 +297,12 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
+        <a href="/2017/06/25/debugging-springboot-in-intellij-ce/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">IntelliJ CE에서 스프링 부트 디버깅 하기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -438,7 +436,7 @@
     var disqus_shortname = 'youngjunsblog';
     
     
-    var disqus_url = 'http://june0313.github.io/2017/06/25/debugging-springboot-in-intellij-ce/';
+    var disqus_url = 'http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/';
     
     (function() {
     var dsq = document.createElement('script');
