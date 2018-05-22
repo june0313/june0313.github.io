@@ -3,22 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Java8에서 날짜 차이 계산하기 | Steady Programmer</title>
+    <title>Ubuntu에 Tomcat 설치하고 실행하기 | Steady Programmer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="java,java 8,LocalDate" />
+        <meta name="keywords" content="java,tomcat,ubuntu,linux" />
     
-    <meta name="description" content="Java8의 java.time 패키지에 새롭게 추가된 LocalDate 클래스 사용시, until(ChronoLocalDate endDate)메소드를 사용하면 두 날짜사이의 기간(Period)을 구할수 있습니다. 리턴 받은 Period 객체의 getYears(), getMonths(), getDays() 메소드를 호출하면 년도 차이, 달 차이, 일 차이를">
-<meta name="keywords" content="java,java 8,LocalDate">
+    <meta name="description" content="이번 포스트에서는 우분투에 아파치 톰캣을 설치하는 방법을 정리해 보도록 하겠습니다. 우분투의 패키지 툴인 apt-get 명령을 사용하는 방법도 있지만, 여기서는 wget 명령어를 사용해 톰캣 압축파일을 직접 다운로드 받아 설치를 해보도록 하겠습니다. 1. 톰캣 홈페이지 방문먼저 아파치 톰캣 홈페이지(http://tomcat.apache.org/) 에 방문하">
+<meta name="keywords" content="java,tomcat,ubuntu,linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java8에서 날짜 차이 계산하기">
-<meta property="og:url" content="http://june0313.github.io/2017/10/19/java8-date-compare/index.html">
+<meta property="og:title" content="Ubuntu에 Tomcat 설치하고 실행하기">
+<meta property="og:url" content="http://june0313.github.io/2018/05/22/install-tomcat-on-ubuntu/index.html">
 <meta property="og:site_name" content="Steady Programmer">
-<meta property="og:description" content="Java8의 java.time 패키지에 새롭게 추가된 LocalDate 클래스 사용시, until(ChronoLocalDate endDate)메소드를 사용하면 두 날짜사이의 기간(Period)을 구할수 있습니다. 리턴 받은 Period 객체의 getYears(), getMonths(), getDays() 메소드를 호출하면 년도 차이, 달 차이, 일 차이를">
-<meta property="og:updated_time" content="2017-10-19T16:21:39.000Z">
+<meta property="og:description" content="이번 포스트에서는 우분투에 아파치 톰캣을 설치하는 방법을 정리해 보도록 하겠습니다. 우분투의 패키지 툴인 apt-get 명령을 사용하는 방법도 있지만, 여기서는 wget 명령어를 사용해 톰캣 압축파일을 직접 다운로드 받아 설치를 해보도록 하겠습니다. 1. 톰캣 홈페이지 방문먼저 아파치 톰캣 홈페이지(http://tomcat.apache.org/) 에 방문하">
+<meta property="og:image" content="https://user-images.githubusercontent.com/6488353/40343413-bd2eb9e8-5dca-11e8-9ec7-b0fe2d8d101c.png">
+<meta property="og:updated_time" content="2018-05-22T06:00:43.645Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java8에서 날짜 차이 계산하기">
-<meta name="twitter:description" content="Java8의 java.time 패키지에 새롭게 추가된 LocalDate 클래스 사용시, until(ChronoLocalDate endDate)메소드를 사용하면 두 날짜사이의 기간(Period)을 구할수 있습니다. 리턴 받은 Period 객체의 getYears(), getMonths(), getDays() 메소드를 호출하면 년도 차이, 달 차이, 일 차이를">
+<meta name="twitter:title" content="Ubuntu에 Tomcat 설치하고 실행하기">
+<meta name="twitter:description" content="이번 포스트에서는 우분투에 아파치 톰캣을 설치하는 방법을 정리해 보도록 하겠습니다. 우분투의 패키지 툴인 apt-get 명령을 사용하는 방법도 있지만, 여기서는 wget 명령어를 사용해 톰캣 압축파일을 직접 다운로드 받아 설치를 해보도록 하겠습니다. 1. 톰캣 홈페이지 방문먼저 아파치 톰캣 홈페이지(http://tomcat.apache.org/) 에 방문하">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/6488353/40343413-bd2eb9e8-5dca-11e8-9ec7-b0fe2d8d101c.png">
     
 
     
@@ -128,14 +130,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-java8-date-compare" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-install-tomcat-on-ubuntu" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Java8에서 날짜 차이 계산하기
+        Ubuntu에 Tomcat 설치하고 실행하기
         </h1>
     
 
@@ -145,35 +147,40 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/10/19/java8-date-compare/" class="article-date">
-            <time datetime="2017-10-19T14:54:23.000Z" itemprop="datePublished">2017-10-19</time>
+        <a href="/2018/05/22/install-tomcat-on-ubuntu/" class="article-date">
+            <time datetime="2018-05-22T04:59:04.000Z" itemprop="datePublished">2018-05-22</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/LocalDate/">LocalDate</a>, <a class="tag-link" href="/tags/java/">java</a>, <a class="tag-link" href="/tags/java-8/">java 8</a>
+        <a class="tag-link" href="/tags/java/">java</a>, <a class="tag-link" href="/tags/linux/">linux</a>, <a class="tag-link" href="/tags/tomcat/">tomcat</a>, <a class="tag-link" href="/tags/ubuntu/">ubuntu</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>Java8의 java.time 패키지에 새롭게 추가된 LocalDate 클래스 사용시, <code>until(ChronoLocalDate endDate)</code>메소드를 사용하면 두 날짜사이의 기간(<code>Period</code>)을 구할수 있습니다. 리턴 받은 <code>Period</code> 객체의 <code>getYears()</code>, <code>getMonths()</code>, <code>getDays()</code> 메소드를 호출하면 년도 차이, 달 차이, 일 차이를 알 수 있습니다. </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">LocalDate today = LocalDate.now();</div><div class="line">LocalDate hiredDate = LocalDate.of(<span class="number">2015</span>, <span class="number">6</span>, <span class="number">29</span>);</div><div class="line"></div><div class="line"><span class="comment">// 입사일로부터 오늘까지의 날짜 차이 계산</span></div><div class="line">Period period = hiredDate.until(today);</div><div class="line"></div><div class="line">System.out.println(period.getYears());  <span class="comment">// 2년</span></div><div class="line">System.out.println(period.getMonths()); <span class="comment">// 3개월</span></div><div class="line">System.out.println(period.getDays());   <span class="comment">// 21일</span></div></pre></td></tr></table></figure>
-<p>여기서 주의해야할 점이 있는데, period 객체의 <code>getDays()</code> 메소드는 2년 3개월을 뺀 나머지인 21일이 리턴되는 것이지 기간 전체의 일 수 차이가 리턴되는 것이 아닙니다. (getYears(), getMonths() 도 마찬가지입니다.)</p>
-<p>두 날짜간 전체 일 수 차이를 구하려면 <code>ChronoUnit</code> 클래스의 <code>between()</code> 메소드를 사용하면 됩니다.<br>ChronoUnit 클래스는 enum 클래스이며 기간 단위별로 enum 타입이 정의되어 있습니다.</p>
-<ul>
-<li>ChronoUnit.YEARS : 년</li>
-<li>ChronoUnit.MONTHS : 월</li>
-<li>ChronoUnit.WEEKS : 주</li>
-<li>ChronoUnit.DAYS : 일</li>
-<li>ChronoUnit.HOURS : 시간</li>
-<li>…</li>
-</ul>
-<p>두 날짜간 전체 일 수를 구하려면 다음과 같이 사용합니다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">long</span> days = ChronoUnit.DAYS.between(hiredDate, today);</div><div class="line">System.out.println(days);    <span class="comment">// 884일</span></div></pre></td></tr></table></figure></p>
-<p>이런식으로 ChronoUnit 클래스의 between() 메소드를 사용하면 년도 차이, 월 차이, 주 차이.. 등을 구할 수 있습니다.</p>
+            <p>이번 포스트에서는 우분투에 아파치 톰캣을 설치하는 방법을 정리해 보도록 하겠습니다. 우분투의 패키지 툴인 <code>apt-get</code> 명령을 사용하는 방법도 있지만, 여기서는 <code>wget</code> 명령어를 사용해 톰캣 압축파일을 직접 다운로드 받아 설치를 해보도록 하겠습니다.</p>
+<h2 id="1-톰캣-홈페이지-방문"><a href="#1-톰캣-홈페이지-방문" class="headerlink" title="1. 톰캣 홈페이지 방문"></a>1. 톰캣 홈페이지 방문</h2><p>먼저 아파치 톰캣 홈페이지(<a href="http://tomcat.apache.org/" target="_blank" rel="external">http://tomcat.apache.org/</a>) 에 방문하여 다운로드할 톰캣 압축 파일의 URL 경로를 얻어와야 합니다.</p>
+<p>현재 톰켓의 최신버전이 9버전까지 나와있으므로 9버전을 기준으로 진행하겠습니다. 홈페이지 좌측의 <code>Download</code>-&gt; <code>Tomcat 9</code> 메뉴를 클릭 하고 <code>Binary Distributions</code> 섹션에서 Core에 해당하는 tar.gz 파일을 우클릭하여 링크 주소를 복사합니다.</p>
+<p><img width="689" alt="2018-05-22 2 13 44" src="https://user-images.githubusercontent.com/6488353/40343413-bd2eb9e8-5dca-11e8-9ec7-b0fe2d8d101c.png"></p>
+<p>아래와 같은 URL이 복사됩니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://mirror.apache-kr.org/tomcat/tomcat-9/v9.0.8/bin/apache-tomcat-9.0.8.tar.gz</div></pre></td></tr></table></figure></p>
+<h2 id="2-wget-명령어로-파일-다운로드"><a href="#2-wget-명령어로-파일-다운로드" class="headerlink" title="2. wget 명령어로 파일 다운로드"></a>2. wget 명령어로 파일 다운로드</h2><p>Ubuntu에서 웹상의 파일을 다운로드 받으려면 <code>wget</code> 명령어를 사용하면 됩니다. 다운로드할 파일이 저장될 위치에서 아래와 같이 wget 명령어를 실행합니다. (저는 aws의 ubuntu 인스턴스에서 진행하였습니다)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://mirror.apache-kr.org/tomcat/tomcat-9/v9.0.8/bin/apache-tomcat-9.0.8.tar.gz</div></pre></td></tr></table></figure>
+<p>아래와 같은 내용이 터미널에 출력되면서 다운로드가 진행됩니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ubuntu@ip-172-31-4-184:~/test/downloads$ wget http://mirror.apache-kr.org/tomcat/tomcat-9/v9.0.8/bin/apache-tomcat-9.0.8.tar.gz--2018-05-22 05:21:38--  http://mirror.apache-kr.org/tomcat/tomcat-9/v9.0.8/bin/apache-tomcat-9.0.8.tar.gz</div><div class="line">Resolving mirror.apache-kr.org (mirror.apache-kr.org)... 1.201.139.179</div><div class="line">Connecting to mirror.apache-kr.org (mirror.apache-kr.org)|1.201.139.179|:80... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: 9818695 (9.4M) [application/x-gzip]</div><div class="line">Saving to: ‘apache-tomcat-9.0.8.tar.gz’</div><div class="line"></div><div class="line">apache-tomcat-9.0.8.tar.gz      100%[======================================================&gt;]   9.36M  52.0MB/s    in 0.2s</div><div class="line"></div><div class="line">2018-05-22 05:21:38 (52.0 MB/s) - ‘apache-tomcat-9.0.8.tar.gz’ saved [9818695/9818695]</div></pre></td></tr></table></figure></p>
+<p>다운로드가 완료되면 <code>apache-tomcat-9.0.8.tar.gz</code> 파일이 생성된 것을 확인할 수 있습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ubuntu@ip-172-31-4-184:~/test/downloads$ ls -al</div><div class="line">total 9600</div><div class="line">drwxrwxr-x 2 ubuntu ubuntu    4096  5월 22 05:21 .</div><div class="line">drwxrwxr-x 3 ubuntu ubuntu    4096  5월 22 05:21 ..</div><div class="line">-rw-rw-r-- 1 ubuntu ubuntu 9818695  4월 27 19:55 apache-tomcat-9.0.8.tar.gz</div></pre></td></tr></table></figure>
+<h2 id="3-압축-파일-해제"><a href="#3-압축-파일-해제" class="headerlink" title="3. 압축 파일 해제"></a>3. 압축 파일 해제</h2><p>다운로드한 파일은 <code>.tar.gz</code> 확장자를 갖는 압축파일이므로 이를 사용하려면 먼저 압축을 풀어야 합니다.<br>압축을 풀때는 <code>tar</code> 명령어와 <code>-xvzf</code> 옵션을 사용합니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zvxf apache-tomcat-9.0.8.tar.gz</div></pre></td></tr></table></figure>
+<p>압축 헤체가 완료되면 같은이름의 디렉토리에 압축이 풀린것을 확인할 수 있습니다. (<code>apache-tomcat-9.0.8/</code>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ubuntu@ip-172-31-4-184:~/test/downloads$ ll</div><div class="line">total 9604</div><div class="line">drwxrwxr-x 3 ubuntu ubuntu    4096  5월 22 05:29 ./</div><div class="line">drwxrwxr-x 3 ubuntu ubuntu    4096  5월 22 05:21 ../</div><div class="line">drwxrwxr-x 9 ubuntu ubuntu    4096  5월 22 05:29 apache-tomcat-9.0.8/</div><div class="line">-rw-rw-r-- 1 ubuntu ubuntu 9818695  4월 27 19:55 apache-tomcat-9.0.8.tar.gz</div></pre></td></tr></table></figure></p>
+<h2 id="4-톰캣-실행-및-접속"><a href="#4-톰캣-실행-및-접속" class="headerlink" title="4. 톰캣 실행 및 접속"></a>4. 톰캣 실행 및 접속</h2><p>톰캣 서버를 실행하려면 <code>apache-tomcat-9.0.8/bin/</code> 디렉토리 밑에 있는 <code>startup.sh</code> 파일을 실행합니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ubuntu@ip-172-31-4-184:~/test/downloads$ cd apache-tomcat-9.0.8/</div><div class="line">ubuntu@ip-172-31-4-184:~/test/downloads/apache-tomcat-9.0.8$ cd bin</div><div class="line">ubuntu@ip-172-31-4-184:~/test/downloads/apache-tomcat-9.0.8/bin$ ./startup.sh</div><div class="line">Using CATALINA_BASE:   /home/ubuntu/test/downloads/apache-tomcat-9.0.8</div><div class="line">Using CATALINA_HOME:   /home/ubuntu/test/downloads/apache-tomcat-9.0.8</div><div class="line">Using CATALINA_TMPDIR: /home/ubuntu/test/downloads/apache-tomcat-9.0.8/temp</div><div class="line">Using JRE_HOME:        /home/ubuntu/java</div><div class="line">Using CLASSPATH:       /home/ubuntu/test/downloads/apache-tomcat-9.0.8/bin/bootstrap.jar:/home/ubuntu/test/downloads/apache-tomcat-9.0.8/bin/tomcat-juli.jar</div><div class="line">Tomcat started.</div></pre></td></tr></table></figure></p>
+<p>톰캣 서버는 기본적으로 <code>8080</code> 포트로 설정돼있기 때문에 웹브라우저에서 해당 우분투 서버의 8080 포트로 접속해 톰켓 서버가 정상 실행중인지 확인합니다.<br>아래와 같은 페이지가 보이면 톰켓이 정상적으로 실행된 것입니다.<br><img width="1011" alt="2018-05-22 2 46 03" src="https://user-images.githubusercontent.com/6488353/40344249-e5898cac-5dce-11e8-8a13-307336507a0b.png"></p>
+<p>또는 <code>netstat -nlp</code> 명령을 이용해 톰캣 서버가 실행중인지 확인할 수 있습니다.</p>
+<p>아래 그림처럼 <code>8080</code>, <code>8005</code>, <code>8009</code> 포트가 LISTEN 상태인것을 확인할 수 있습니다. (톰캣은 기본적으로 이 3개의 포트를 사용합니다.)</p>
+<p><img src="https://user-images.githubusercontent.com/6488353/40344456-d9692698-5dcf-11e8-9588-a899627ab67c.png"></p>
+<h2 id="4-톰캣-종료"><a href="#4-톰캣-종료" class="headerlink" title="4. 톰캣 종료"></a>4. 톰캣 종료</h2><p>톰캣 서버를 종료하려면 <code>apache-tomcat-9.0.8/bin/</code> 디렉토리 밑에 있는 <code>shutdown.sh</code> 파일을 실행하면 됩니다. 아래와 같은 메시지가 출력되면서 톰캣 서버가 종료됩니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ubuntu@ip-172-31-4-184:~/test/downloads/apache-tomcat-9.0.8/bin$ ./shutdown.sh</div><div class="line">Using CATALINA_BASE:   /home/ubuntu/test/downloads/apache-tomcat-9.0.8</div><div class="line">Using CATALINA_HOME:   /home/ubuntu/test/downloads/apache-tomcat-9.0.8</div><div class="line">Using CATALINA_TMPDIR: /home/ubuntu/test/downloads/apache-tomcat-9.0.8/temp</div><div class="line">Using JRE_HOME:        /home/ubuntu/java</div><div class="line">Using CLASSPATH:       /home/ubuntu/test/downloads/apache-tomcat-9.0.8/bin/bootstrap.jar:/home/ubuntu/test/downloads/apache-tomcat-9.0.8/bin/tomcat-juli.jar</div></pre></td></tr></table></figure></p>
 
         </div>
         <footer class="article-footer">
@@ -181,7 +188,7 @@
 
 
 
-    <a data-url="http://june0313.github.io/2017/10/19/java8-date-compare/" data-id="cjhh9qac900031x9czg7qntpw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://june0313.github.io/2018/05/22/install-tomcat-on-ubuntu/" data-id="cjhh9qacg00051x9cixlf0iu8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -294,20 +301,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/04/08/install-java-on-mac/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            macOS에 JDK 설치하기
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/08/install-java-on-mac/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점</p>
+        <p class="article-nav-title">macOS에 JDK 설치하기</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -503,7 +500,7 @@
     var disqus_shortname = 'youngjunsblog';
     
     
-    var disqus_url = 'http://june0313.github.io/2017/10/19/java8-date-compare/';
+    var disqus_url = 'http://june0313.github.io/2018/05/22/install-tomcat-on-ubuntu/';
     
     (function() {
     var dsq = document.createElement('script');
