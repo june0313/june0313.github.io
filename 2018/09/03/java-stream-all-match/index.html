@@ -3,15 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2018/5 | Steady Programmer</title>
+    <title>Java Stream에서 allMatch() 사용시 주의할 점 | Steady Programmer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Steady Programmer">
-<meta property="og:url" content="http://june0313.github.io/archives/2018/05/index.html">
+        <meta name="keywords" content="java 8,stream,allMatch,math,logic" />
+    
+    <meta name="description" content="Java 8에 포함된 Stream 클래스에는 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다.  예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다. 123456789101112@Testpublic void allMatchTest1()) &amp;#123;    List&amp;lt;M">
+<meta name="keywords" content="java 8,stream,allMatch,math,logic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Stream에서 allMatch() 사용시 주의할 점">
+<meta property="og:url" content="http://june0313.github.io/2018/09/03/java-stream-all-match/index.html">
 <meta property="og:site_name" content="Steady Programmer">
+<meta property="og:description" content="Java 8에 포함된 Stream 클래스에는 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다.  예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다. 123456789101112@Testpublic void allMatchTest1()) &amp;#123;    List&amp;lt;M">
+<meta property="og:updated_time" content="2018-09-02T17:22:53.484Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Steady Programmer">
+<meta name="twitter:title" content="Java Stream에서 allMatch() 사용시 주의할 점">
+<meta name="twitter:description" content="Java 8에 포함된 Stream 클래스에는 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다.  예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다. 123456789101112@Testpublic void allMatchTest1()) &amp;#123;    List&amp;lt;M">
     
 
     
@@ -117,73 +124,143 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2018/5
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-java-stream-all-match" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/22/install-tomcat-on-ubuntu/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/6488353/40343413-bd2eb9e8-5dca-11e8-9ec7-b0fe2d8d101c.png)" alt="Ubuntu에 Tomcat 설치하고 실행하기" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://june0313.github.io/2018/05/22/install-tomcat-on-ubuntu/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2018-05-22T04:59:04.000Z" itemprop="datePublished">2018-05-22</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/22/install-tomcat-on-ubuntu/">Ubuntu에 Tomcat 설치하고 실행하기</a>
+        Java Stream에서 allMatch() 사용시 주의할 점
         </h1>
     
 
-        <p class="article-excerpt">
-            이번 포스트에서는 우분투에 아파치 톰캣을 설치하는 방법을 정리해 보도록 하겠습니다. 우분투의 패키지 툴인 apt-get 명령을 사용하는 방법도 있지만, 여기서는 wget 명령어를 사용해 톰캣 압축파일을 직접 다운로드 받아 설치를 해보도록 하겠습니다.
-1. 톰캣 홈페이지 방문먼저 아파치 톰캣 홈페이지(http://tomcat.apache.org/) 에 방문하
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/09/03/java-stream-all-match/" class="article-date">
+            <time datetime="2018-09-02T15:04:34.000Z" itemprop="datePublished">2018-09-03</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/allMatch/">allMatch</a>, <a class="tag-link" href="/tags/java-8/">java 8</a>, <a class="tag-link" href="/tags/logic/">logic</a>, <a class="tag-link" href="/tags/math/">math</a>, <a class="tag-link" href="/tags/stream/">stream</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>Java 8에 포함된 Stream 클래스에는 요소들이 주어진 조건에 만족하는지 여부를 검사하는 <code>allMatch()</code> 메서드를 제공한다. </p>
+<p>예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">allMatchTest1</span><span class="params">()</span>) </span>&#123;</div><div class="line">    List&lt;Member&gt; members = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    members.add(Member.withAge(<span class="number">10</span>));</div><div class="line">    members.add(Member.withAge(<span class="number">20</span>));</div><div class="line">    members.add(Member.withAge(<span class="number">30</span>));</div><div class="line"></div><div class="line">    <span class="keyword">boolean</span> result = members.stream()</div><div class="line">        .allMatch(member -&gt; member.getAge() &gt; <span class="number">5</span>);</div><div class="line"></div><div class="line">    assertThat(result).isTrue();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>모든 회원의 나이가 5살 이상이므로 allMatch()는 true를 리턴하고 테스트는 통과하게 된다.</p>
+<p>조건을 바꿔서 모든 회원의 나이가 20살 이상인지 확인해보자.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">allMatchTest2</span><span class="params">()</span> </span>&#123;</div><div class="line">    List&lt;Member&gt; members = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    members.add(Member.withAge(<span class="number">10</span>));</div><div class="line">    members.add(Member.withAge(<span class="number">20</span>));</div><div class="line">    members.add(Member.withAge(<span class="number">30</span>));</div><div class="line">    </div><div class="line">    <span class="keyword">boolean</span> result = members.stream()</div><div class="line">        .allMatch(member -&gt; member.getAge() &gt; <span class="number">20</span>);</div><div class="line">    </div><div class="line">    assertThat(result).isFalse();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>회원 중 10살인 회원이 존재하기 때문에 해당 조건을 모두 만족하지 않으므로 false를 리턴하고 위 테스트 코드도 통과하게 된다.</p>
+<p>만약 회원 리스트가 빈 리스트라면 어떨까?</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">allMatchTestWhenEmpty</span><span class="params">()</span> </span>&#123;</div><div class="line">    List&lt;Member&gt; members = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    </div><div class="line">    <span class="keyword">boolean</span> result = members.stream()</div><div class="line">        .allMatch(member -&gt; member.getAge() &gt; <span class="number">20</span>);</div><div class="line">    </div><div class="line">    assertThat(result).isFalse();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>회원 리스트가 비어있고, 그러므로 20살 이상의 회원이 한 명도 없기 때문에 조건에 맞지 않아 false를 리턴 할 것이라 생각했다. <strong>그러나 allMatch()를 true를 리턴하고 아래처럼 테스트는 실패한다.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">org.junit.ComparisonFailure: </div><div class="line">Expected :false</div><div class="line">Actual   :true</div></pre></td></tr></table></figure>
+<p>당연히 false를 리턴할 것 이라고 생각했는데 true를 리턴하는 것이 쉽게 이해가 되질 않았다. 궁금해서 구글링을 좀 해보았더니 StackOverflow에서 같은 내용의 질문을 찾을 수 있었다.</p>
+<p><a href="https://stackoverflow.com/questions/30223079/why-does-stream-allmatch-return-true-for-an-empty-stream/30223427#30223427" target="_blank" rel="external">https://stackoverflow.com/questions/30223079/why-does-stream-allmatch-return-true-for-an-empty-stream/30223427#30223427</a></p>
+<p>StackOverflow의 답변을 보고 이는 <strong>Vacuous Truth</strong> 라는 논리학 개념에서 비롯되었다는 것을 알게되었다.</p>
+<h3 id="Vacuous-Truth"><a href="#Vacuous-Truth" class="headerlink" title="Vacuous Truth"></a>Vacuous Truth</h3><p>(갑자기 수학이라니 당황스럽지만 이왕 알게 된 것이니 정리는 해놔야겠다.)</p>
+<p>참과 거짓을 판별할 수 있는 문장을 우리는 명제라고 부른다. 예를 들어, <code>비가 오면 재택근무를 한다</code> 라는 문장도 하나의 명제이다. 그렇다면 이 명제의 참, 거짓은 어떻게 판별할 수 있을까?</p>
+<p>먼저 ‘비가 온다’라는 가정이 참인 경우에는 재택근무를 하면 참, 재택근무를 하지 않으면 거짓이 된다. 그렇다면 가정이 거짓인 경우, 즉 비가 오지 않는 경우를 생각해보자. 비가 오지 않는다고 해서 문장 전체가 거짓인 문장이라고 할 수 있을까? </p>
+<p>다른 예를 들어서 <code>내 방에 있는 모든 책은 자바책이다</code> 명제가 참인지 판별할 때 만약 내 방에 책이 한 권도 없다면? 책이 한권도 없으므로 모든 책이 자바책인이 아닌지 따지는 것 자체가 무의미하게 느껴진다. </p>
+<p>논리학에서는 이처럼 가정이 거짓인 명제를 참으로 간주한다. <code>&quot;p이면 q이다&quot;</code> 라는 명제에서, p가 거짓이면 q가 참이든 거짓이든 상관없이 전체 명제는 참이되며 이런 경우를 <code>Vacuous Truth</code>라고 부른다. 우리말로 하면 <code>공허한 참, 의미없는 참</code>이라는 뜻이다. 이러한 수학적 배경에 근거하여 빈 스트림에 allMatch() 메서드를 호출하면 true가 리턴되었던 것이다.</p>
+<h3 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h3><p>빈 스트림에 allMatch() 메서드를 호출하면 true가 리턴되는 것은 버그가 아니고 의도된 것이 맞다. 만약 스트림이 비어있는 경우도 false로 처리하고 싶다면 아래 코드처럼 리스트가 비었는지를 먼저 검사해서 별도로 처리하는게 좋을 것 같다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">areAllMembersOver20</span><span class="params">(List&lt;Member&gt; members)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (members.isEmpty()) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> members.stream().allMatch(member -&gt; member.getAge() &gt; <span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://june0313.github.io/2018/09/03/java-stream-all-match/" data-id="cjlkzooyr00172k9c4qlwe3km" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -220,6 +297,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/08/11/read-resource-file-on-spring/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">스프링 프로젝트에서 리소스 파일 읽기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -410,11 +500,13 @@
     var disqus_shortname = 'youngjunsblog';
     
     
+    var disqus_url = 'http://june0313.github.io/2018/09/03/java-stream-all-match/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
