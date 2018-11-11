@@ -8,17 +8,17 @@
     
         <meta name="keywords" content="java 8,stream,allMatch,math,logic" />
     
-    <meta name="description" content="Java 8에 포함된 Stream 클래스에는 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다.  예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다. 123456789101112@Testpublic void allMatchTest1()) &amp;#123;    List&amp;lt;M">
+    <meta name="description" content="Java 8에 포함된 Stream 클래스에는 모든 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다.  예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다. 123456789101112@Testpublic void allMatchTest1()) &amp;#123;    List&amp;l">
 <meta name="keywords" content="java 8,stream,allMatch,math,logic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Stream에서 allMatch() 사용시 주의할 점">
 <meta property="og:url" content="http://june0313.github.io/2018/09/03/java-stream-all-match/index.html">
 <meta property="og:site_name" content="Developer Youngjun">
-<meta property="og:description" content="Java 8에 포함된 Stream 클래스에는 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다.  예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다. 123456789101112@Testpublic void allMatchTest1()) &amp;#123;    List&amp;lt;M">
-<meta property="og:updated_time" content="2018-09-02T17:22:53.484Z">
+<meta property="og:description" content="Java 8에 포함된 Stream 클래스에는 모든 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다.  예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다. 123456789101112@Testpublic void allMatchTest1()) &amp;#123;    List&amp;l">
+<meta property="og:updated_time" content="2018-11-11T12:55:41.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Stream에서 allMatch() 사용시 주의할 점">
-<meta name="twitter:description" content="Java 8에 포함된 Stream 클래스에는 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다.  예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다. 123456789101112@Testpublic void allMatchTest1()) &amp;#123;    List&amp;lt;M">
+<meta name="twitter:description" content="Java 8에 포함된 Stream 클래스에는 모든 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다.  예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다. 123456789101112@Testpublic void allMatchTest1()) &amp;#123;    List&amp;l">
     
 
     
@@ -160,7 +160,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>Java 8에 포함된 Stream 클래스에는 요소들이 주어진 조건에 만족하는지 여부를 검사하는 <code>allMatch()</code> 메서드를 제공한다. </p>
+            <p>Java 8에 포함된 Stream 클래스에는 모든 요소들이 주어진 조건에 만족하는지 여부를 검사하는 <code>allMatch()</code> 메서드를 제공한다. </p>
 <p>예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">allMatchTest1</span><span class="params">()</span>) </span>&#123;</div><div class="line">    List&lt;Member&gt; members = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    members.add(Member.withAge(<span class="number">10</span>));</div><div class="line">    members.add(Member.withAge(<span class="number">20</span>));</div><div class="line">    members.add(Member.withAge(<span class="number">30</span>));</div><div class="line"></div><div class="line">    <span class="keyword">boolean</span> result = members.stream()</div><div class="line">        .allMatch(member -&gt; member.getAge() &gt; <span class="number">5</span>);</div><div class="line"></div><div class="line">    assertThat(result).isTrue();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>모든 회원의 나이가 5살 이상이므로 allMatch()는 true를 리턴하고 테스트는 통과하게 된다.</p>
@@ -188,7 +188,7 @@
 
 
 
-    <a data-url="http://june0313.github.io/2018/09/03/java-stream-all-match/" data-id="cjns5kwvt0007sk9cbssvpvsz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://june0313.github.io/2018/09/03/java-stream-all-match/" data-id="cjocvtwgi0007dp9cjfyvyldl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
