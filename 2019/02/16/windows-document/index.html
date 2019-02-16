@@ -3,15 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2018/9 | Developer Youngjun</title>
+    <title>Window and Document | Developer Youngjun</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Developer Youngjun">
-<meta property="og:url" content="http://june0313.github.io/archives/2018/09/index.html">
+        <meta name="keywords" content="javascript,window,document,bom,dom" />
+    
+    <meta name="description" content="자바스크립트에서 window와 document는 모두 브라우저가 제공하는 자바스크립트 내장 객체이다. 이 두 객체가 의미하는건 무엇이고 어떤 차이가 있을까? Window - 브라우저 객체 모델의 최상위 객체브라우저 객체 모델(BOM : Browser Object Model) 은 웹브라우저의 탭 혹은 창의 모델을 나타내는데, 이러한 웹브라우저 객체 모델의 최">
+<meta name="keywords" content="javascript,window,document,bom,dom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Window and Document">
+<meta property="og:url" content="http://june0313.github.io/2019/02/16/windows-document/index.html">
 <meta property="og:site_name" content="Developer Youngjun">
+<meta property="og:description" content="자바스크립트에서 window와 document는 모두 브라우저가 제공하는 자바스크립트 내장 객체이다. 이 두 객체가 의미하는건 무엇이고 어떤 차이가 있을까? Window - 브라우저 객체 모델의 최상위 객체브라우저 객체 모델(BOM : Browser Object Model) 은 웹브라우저의 탭 혹은 창의 모델을 나타내는데, 이러한 웹브라우저 객체 모델의 최">
+<meta property="og:updated_time" content="2019-02-16T01:07:55.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Developer Youngjun">
+<meta name="twitter:title" content="Window and Document">
+<meta name="twitter:description" content="자바스크립트에서 window와 document는 모두 브라우저가 제공하는 자바스크립트 내장 객체이다. 이 두 객체가 의미하는건 무엇이고 어떤 차이가 있을까? Window - 브라우저 객체 모델의 최상위 객체브라우저 객체 모델(BOM : Browser Object Model) 은 웹브라우저의 탭 혹은 창의 모델을 나타내는데, 이러한 웹브라우저 객체 모델의 최">
     
 
     
@@ -119,56 +126,136 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2018/9
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-windows-document" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2018-09-02T15:04:34.000Z" itemprop="datePublished">2018-09-03</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/03/java-stream-all-match/">Java Stream에서 allMatch() 사용시 주의할 점</a>
+        Window and Document
         </h1>
     
 
-        <p class="article-excerpt">
-            Java 8에 포함된 Stream 클래스에는 모든 요소들이 주어진 조건에 만족하는지 여부를 검사하는 allMatch() 메서드를 제공한다. 
-예를 들어, 모든 회원의 나이가 5살 이상인지 검사하는 테스트 코드를 다음과 같이 작성할 수 있다.
-123456789101112@Testpublic void allMatchTest1()) &#123;    List&l
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/02/16/windows-document/" class="article-date">
+            <time datetime="2019-02-16T00:42:16.000Z" itemprop="datePublished">2019-02-16</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/bom/">bom</a>, <a class="tag-link" href="/tags/document/">document</a>, <a class="tag-link" href="/tags/dom/">dom</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>, <a class="tag-link" href="/tags/window/">window</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>자바스크립트에서 window와 document는 모두 브라우저가 제공하는 <code>자바스크립트 내장 객체</code>이다. 이 두 객체가 의미하는건 무엇이고 어떤 차이가 있을까?</p>
+<h3 id="Window-브라우저-객체-모델의-최상위-객체"><a href="#Window-브라우저-객체-모델의-최상위-객체" class="headerlink" title="Window - 브라우저 객체 모델의 최상위 객체"></a>Window - 브라우저 객체 모델의 최상위 객체</h3><p><strong>브라우저 객체 모델(BOM : Browser Object Model)</strong> 은 웹브라우저의 탭 혹은 창의 모델을 나타내는데, 이러한 웹브라우저 객체 모델의 최상위 객체가 window 객체이다. window 객체는 현재 웹브라우저의 창이나 탭을 표현한다.</p>
+<h3 id="Document-문서-객체-모델의-최상위-객체"><a href="#Document-문서-객체-모델의-최상위-객체" class="headerlink" title="Document - 문서 객체 모델의 최상위 객체"></a>Document - 문서 객체 모델의 최상위 객체</h3><p><strong>문서 객체 모델(DOM : Document Object Model)</strong> 은 현재 웹페이지의 모델을 생성하며, 이러한 문서 객체 모델의 최상위 객체가 document 객체이다. document 객체는 전체 페이지를 표현한다.</p>
+<p>쉽게 말해, window는 웹브라우저 창, document는 웹브라우저 창 안에 보이는 문서라고 생각하면 된다. 실제로 document 객체는 window 객체의 속성이기도 하다.</p>
+<h2 id="window-height-vs-document-height"><a href="#window-height-vs-document-height" class="headerlink" title="$(window).height() vs. $(document).height()"></a>$(window).height() vs. $(document).height()</h2><p>간단하게 jquery 예제를 통해 비교해보자. 두 객체를 jquery로 감싸면 동일한 height() 메서드가 존재한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">window</span>).height()</div></pre></td></tr></table></figure>
+<p>위의 코드는 브라우저 창의 높이, 즉 현재 보이는 부분의 높이를 구한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).height()</div></pre></td></tr></table></figure>
+<p>반면 위처럼 document객체의 height() 메서드를 호출하면 눈에 보이지 않는 부분을 포함하여 문서 전체의 높이를 구하게 된다.</p>
+<h2 id="document-ready-vs-window-load"><a href="#document-ready-vs-window-load" class="headerlink" title="$(document).ready() vs. $(window).load()"></a>$(document).ready() vs. $(window).load()</h2><p><code>$(document).ready()</code> 와 <code>$(window).load()</code>에도 차이점이 있다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// code to run...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>위의 코드는 DOM 구조가 메모리에 로드되면 인자로 받은 콜백함수를 실행시킨다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">window</span>).load(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// code to run...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>반면 위의 코드는 화면에 필요한 모든 요소들이 웹 브라우저의 메모리에 로드 된 다음에 콜백함수를 실행한다.<br>여기서 말하는 모든 요소에는 css, js, image.. 등이 포함된다.<br>순서로 보자면 document의 ready이벤트가 window의 load이벤트보다 먼저 발생하게 된다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://june0313.github.io/2019/02/16/windows-document/" data-id="cjs6s9khk0008ex9cqkydnrch" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -205,6 +292,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/09/03/java-stream-all-match/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Java Stream에서 allMatch() 사용시 주의할 점</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -340,11 +440,13 @@
     var disqus_shortname = 'youngjunsblog';
     
     
+    var disqus_url = 'http://june0313.github.io/2019/02/16/windows-document/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
