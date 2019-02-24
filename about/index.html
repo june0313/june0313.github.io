@@ -3,24 +3,19 @@
 <head>
     <meta charset="utf-8">
     
-    <title>스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점 | Developer Youngjun</title>
+    <title>About | Developer Youngjun</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="spring,spring mvc" />
-    
-    <meta name="description" content="스프링 MVC의 컨트롤러에는 콤마(,)로 구분된 파라미터를 리스트로 바인딩 해주는 편리한 기능이 있다. ID 목록 등을 요청으로 받을 때 자주 사용하는 기능이다. @PathViriable 과 @RequestParam 모두 사용할 수 있으며, 사용법은 아래와 같이 간단한다. 바인딩 될 파라미터 변수를 List로 선언해주면 된다. 12345@GetMapping">
-<meta name="keywords" content="spring,spring mvc">
-<meta property="og:type" content="article">
-<meta property="og:title" content="스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점">
-<meta property="og:url" content="http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/index.html">
+    <meta name="description" content="안녕하세요! 개발자 영준입니다.이 블로그는 제가 프로그래밍을 하면서 깨닫게 된 내용이나 새롭게 배운 지식을 정리하여 올리는 블로그입니다. 주로 Java와 Spring을 중심으로 웹 개발 기술을 다룹니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About">
+<meta property="og:url" content="http://june0313.github.io/about/index.html">
 <meta property="og:site_name" content="Developer Youngjun">
-<meta property="og:description" content="스프링 MVC의 컨트롤러에는 콤마(,)로 구분된 파라미터를 리스트로 바인딩 해주는 편리한 기능이 있다. ID 목록 등을 요청으로 받을 때 자주 사용하는 기능이다. @PathViriable 과 @RequestParam 모두 사용할 수 있으며, 사용법은 아래와 같이 간단한다. 바인딩 될 파라미터 변수를 List로 선언해주면 된다. 12345@GetMapping">
-<meta property="og:image" content="http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result1.png">
-<meta property="og:updated_time" content="2019-02-16T13:47:37.091Z">
+<meta property="og:description" content="안녕하세요! 개발자 영준입니다.이 블로그는 제가 프로그래밍을 하면서 깨닫게 된 내용이나 새롭게 배운 지식을 정리하여 올리는 블로그입니다. 주로 Java와 Spring을 중심으로 웹 개발 기술을 다룹니다.">
+<meta property="og:updated_time" content="2019-02-24T06:23:00.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점">
-<meta name="twitter:description" content="스프링 MVC의 컨트롤러에는 콤마(,)로 구분된 파라미터를 리스트로 바인딩 해주는 편리한 기능이 있다. ID 목록 등을 요청으로 받을 때 자주 사용하는 기능이다. @PathViriable 과 @RequestParam 모두 사용할 수 있으며, 사용법은 아래와 같이 간단한다. 바인딩 될 파라미터 변수를 List로 선언해주면 된다. 12345@GetMapping">
-<meta name="twitter:image" content="http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result1.png">
+<meta name="twitter:title" content="About">
+<meta name="twitter:description" content="안녕하세요! 개발자 영준입니다.이 블로그는 제가 프로그래밍을 하면서 깨닫게 된 내용이나 새롭게 배운 지식을 정리하여 올리는 블로그입니다. 주로 Java와 Spring을 중심으로 웹 개발 기술을 다룹니다.">
     
 
     
@@ -132,57 +127,27 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Programming/">Programming</a>
+    <em class="page-title-link" data-url="/about/index.html">About</em>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-points-to-note-when-list-parameters-binding-in-spring-mvc" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="page-undefined" class="article article-single article-type-page" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        스프링 MVC에서 리스트 파라미터 바인딩시 주의할 점
+        About
         </h1>
     
 
             </header>
         
         
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/" class="article-date">
-            <time datetime="2017-09-10T08:36:15.000Z" itemprop="datePublished">2017-09-10</time>
-        </a>
-    </div>
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/spring/">spring</a>, <a class="tag-link" href="/tags/spring-mvc/">spring mvc</a>
-    </div>
-
-            </div>
-        
         
         <div class="article-entry" itemprop="articleBody">
-            <p>스프링 MVC의 컨트롤러에는 콤마(,)로 구분된 파라미터를 리스트로 바인딩 해주는 편리한 기능이 있다. ID 목록 등을 요청으로 받을 때 자주 사용하는 기능이다.</p>
-<p><code>@PathViriable</code> 과 <code>@RequestParam</code> 모두 사용할 수 있으며, 사용법은 아래와 같이 간단한다. 바인딩 될 파라미터 변수를 List로 선언해주면 된다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GetMapping</span>(<span class="string">"/items/&#123;ids&#125;"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> List&lt;Long&gt; <span class="title">getItems</span><span class="params">(@PathVariable List&lt;Long&gt; ids)</span> </span>&#123;</div><div class="line">    System.out.println(ids);</div><div class="line">    <span class="keyword">return</span> ids;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>클라이언트에서는 아래와 같이 콤마로 구분된 파라미터로 요청할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:8080/items/1,2,3</div></pre></td></tr></table></figure></p>
-<p>결과 화면<br><img src="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result1.png" alt="결과 화면" title="결과 화면"></p>
-<p>그런데 클라이언트에서 아래와 같이 호출했을때는 어떻게 바인딩이 될까?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:8080/items/1,,3,4</div></pre></td></tr></table></figure></p>
-<p>내가 예상한 결과는 아래와 같았다.</p>
-<img src="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result2.png" alt="내가 예상한 결과" title="내가 예상한 결과">
-<p>즉, 1번 아이디 뒤에는 값이 비어있으므로 비어있는 부분은 바인딩 되지 않고 존재하는 값인 1, 3, 4 번만 바인딩이 될것이라 생각했다. 그러나 실제 결과는 아래와 같았다. </p>
-<img src="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/result3.png" alt="실제 결과" title="실제 결과">
-<p>비어있는 값은 <code>null</code> 로 바인딩이 되었다. 물론 클라이언트 측에서 제대로된 값으로 요청을 하면 좋겠지만 저런식으로 요청이 들어오게 되면 서버에서는 <strong>NPE(Null Pointer Exception)</strong>가 발생할 수 있다. (실제 운영중인 서버에서 같은 이유로 NPE가 난 적이 있다.) </p>
-<p>아래는 NPE가 발생하는 코드의 예이다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GetMapping</span>(<span class="string">"/items/&#123;ids&#125;"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> List&lt;Long&gt; <span class="title">getItems</span><span class="params">(@PathVariable List&lt;Long&gt; ids)</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span> (Long id : ids) &#123;</div><div class="line">        System.out.println(id.toString());</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ids;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>실제 ids 값을 디버깅해 보면 다음처럼 보인다.<br><img src="/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/debug_result.png" alt="ids 값 디버깅" title="ids 값 디버깅"><br>리스트 요소에 null이 포함되어 있어도 실제 사이즈가 4이고 루프도 4번 돌기 때문에 두번째 id를 출력하는 과정에서 <strong>NPE</strong>가 발생하게된다.</p>
-<p>이처럼 리스트 파라미터를 바인딩 할때는 <strong>중간 값으로 null이 들어올 수 있음을 주의</strong>해야하고 적절한 null 처리가 필요하다. 혹은 파라미터를 사용하기 전에 <strong>null요소를 미리 제거하고 사용</strong>하는 방법도 있다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GetMapping</span>(<span class="string">"/items/&#123;ids&#125;"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> List&lt;Long&gt; <span class="title">getItems</span><span class="params">(@PathVariable List&lt;Long&gt; ids)</span> </span>&#123;</div><div class="line">    <span class="keyword">final</span> List&lt;Long&gt; nullRemovedIds = ids.stream()</div><div class="line">        .filter(Objects::nonNull)</div><div class="line">        .collect(Collectors.toList());</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (Long id : nullRemovedIds) &#123;</div><div class="line">        System.out.println(id.toString());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> nullRemovedIds;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <p>안녕하세요! 개발자 영준입니다.<br>이 블로그는 제가 프로그래밍을 하면서 깨닫게 된 내용이나 새롭게 배운 지식을 정리하여 올리는 블로그입니다. 주로 Java와 Spring을 중심으로 웹 개발 기술을 다룹니다.</p>
 
         </div>
         <footer class="article-footer">
@@ -190,7 +155,7 @@
 
 
 
-    <a data-url="http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/" data-id="cjsijcu180002w49c5snj04qi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://june0313.github.io/about/index.html" data-id="cjsijcu160001w49cv1z1y7g5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -299,29 +264,6 @@
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2017/10/19/java8-date-compare/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Java8에서 날짜 차이 계산하기
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2017/06/25/debugging-springboot-in-intellij-ce/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">IntelliJ CE에서 스프링 부트 디버깅 하기</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -464,7 +406,7 @@
     var disqus_shortname = 'youngjunsblog';
     
     
-    var disqus_url = 'http://june0313.github.io/2017/09/10/points-to-note-when-list-parameters-binding-in-spring-mvc/';
+    var disqus_url = 'http://june0313.github.io/about/index.html';
     
     (function() {
     var dsq = document.createElement('script');
